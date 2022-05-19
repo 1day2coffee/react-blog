@@ -29,16 +29,24 @@ function App() {
                 }}>
                 🤚
               </span>
-              좋아요{따봉[i]} 
-              <button onClick={()=>{let copy = [...글제목]; copy.splice(i,1); 글제목변경(copy)}}>글삭제</button>
+              좋아요{따봉[i]}
+              <button onClick={() => {
+                let copy = [...글제목];
+                copy.splice(i, 1);
+                글제목변경(copy)
+              }}>글삭제</button>
             </h4>
-            
-            <h4>2월 17일</h4>
+
+            <h4>00월 00일</h4>
           </div>
         );
       })}
       <input onChange={(e) => { 글제목값변경(e.target.value) }}></input>
-      <button onClick={() => {let copy = [...글제목]; copy.unshift(글제목값); 글제목변경(copy) }}>글 발행하기</button>
+      <button onClick={() => {
+        let copy = [...글제목];
+        copy.unshift(글제목값);
+        글제목변경(copy);
+      }}>글 발행하기</button>
       {modal === true ? (
         <Modal 변수이름={글제목} 변수이름변경={글제목변경} />
       ) : null}
